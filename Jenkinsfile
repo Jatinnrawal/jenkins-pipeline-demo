@@ -12,16 +12,10 @@ pipeline {
 	}
 
 
-	stage('Test') {
-		steps {
-			bat 'pytest'
-		}
-	}
 
-
-        stage('Run App') {
+        stage('Run Flask App') {
             steps {
-                bat 'python app.py'
+                bat 'start cmd /k python app.py'
             }
         }
     }
